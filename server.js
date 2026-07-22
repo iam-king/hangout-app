@@ -143,6 +143,6 @@ async function staticFile(req,res,url) {
 export const server = http.createServer(async (req,res)=>{
   const url=new URL(req.url,`http://${req.headers.host||'localhost'}`);
   try { if(url.pathname.startsWith('/api/')) await api(req,res,url); else await staticFile(req,res,url); }
-  catch(error) { send(res,error.status||500,{message:error.status?error.message:'Internal server error'}); }
+  catch(error) { send(res,error.status||500,{message:error.status?error.message:'Internal server error'});
 });
-server.listen(port,'0.0.0.0',()=>console.log(HANGOUT running at http://localhost:${port}));
+server.listen(port,'0.0.0.0',(){=>console.log(HANGOUT running at http://localhost:${port});
