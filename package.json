@@ -5,7 +5,7 @@
   "description": "Runnable HANGOUT community and events MVP",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
+    "start": "node ./server.js",
     "dev": "node --watch server.js",
     "test": "node --test"
   },
