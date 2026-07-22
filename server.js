@@ -145,4 +145,4 @@ export const server = http.createServer(async (req,res)=>{
   try { if(url.pathname.startsWith('/api/')) await api(req,res,url); else await staticFile(req,res,url); }
   catch(error) { send(res,error.status||500,{message:error.status?error.message:'Internal server error'}); }
 });
-if (process.env.NODE_ENV !== 'test') server.listen(port,()=>console.log(`HANGOUT running at http://localhost:${port}`));
+if (process.env.NODE_ENV !== 'test') server.listen(port,'0.0.0.0'()=>console.log(`HANGOUT running at http://localhost:${port}`));
